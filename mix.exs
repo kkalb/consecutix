@@ -10,8 +10,10 @@ defmodule Consecutix.MixProject do
       version: @version,
       elixir: "~> 1.14",
       name: "Consecutix",
+      description: "Identifies consecutive elements within a given list of elements",
       deps: deps(),
-      package: package()
+      package: package(),
+      preferred_cli_env: [test: :test]
     ]
   end
 
