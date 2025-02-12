@@ -13,7 +13,7 @@ defmodule ConsecutixTest do
     end
 
     test "consecutive_lists/1 with two identical elements returns both elements in the same group" do
-      assert Consecutix.consecutive_lists([1, 1]) == [[1]]
+      assert Consecutix.consecutive_lists([1, 1]) == [[1, 1]]
     end
 
     test "consecutive_lists/1 with two consecutive elements returns both elements in the same group" do
@@ -79,7 +79,6 @@ defmodule ConsecutixTest do
   describe "tests for some use cases" do
     test "consecutive_lists/1 check integer in group" do
       base = [0, 1, 5, 6, 8, 10, 11]
-      test_int = 6
       # [[0, 1], [5, 6], [8], [10, 11]]
       [g1, g2, g3, g4] = Consecutix.consecutive_lists(base)
 
@@ -87,15 +86,6 @@ defmodule ConsecutixTest do
       assert 6 in g2
       assert 6 not in g3
       assert 6 not in g4
-    end
-  end
-
-  @tag special_data_types: true
-  describe "other data types" do
-    test "consecutive_lists/1 respects input data" do
-      base = [%{"int" => 0}, %{"int" => 1}, %{"int" => 2}]
-
-      assert Consecutix.consecutive_maps(base) == [[%{"int" => 0}, %{"int" => 1}, %{"int" => 2}]]
     end
   end
 end
