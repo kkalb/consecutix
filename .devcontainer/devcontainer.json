@@ -1,0 +1,19 @@
+{
+	"name": "Consecutix",
+    "build": {
+        "dockerfile": "Dockerfile"
+      },
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "bash"
+			},
+			"extensions": [
+				"jakebecker.elixir-ls",
+				"ms-azuretools.vscode-docker",
+				"github.vscode-github-actions"
+			]
+		}
+	},
+	"forwardPorts": []
+}
