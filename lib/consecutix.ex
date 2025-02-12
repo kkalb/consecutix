@@ -6,7 +6,6 @@ defmodule Consecutix do
   @doc """
   Returns consecutively grouped elements.
   Returned elements will be sorted.
-  Duplicated elements are deleted.
 
   ## Examples
 
