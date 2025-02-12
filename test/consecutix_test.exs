@@ -36,6 +36,14 @@ defmodule ConsecutixTest do
       assert Consecutix.consecutive_lists([0, 1, 2, 3]) == [[0, 1, 2, 3]]
     end
 
+    test "consecutive_lists/1 with four unsorted consecutive elements returns all elements in the same group" do
+      assert Consecutix.consecutive_lists([0, 1, 2, 1]) == [[0, 1, 1, 2]]
+    end
+
+    test "consecutive_lists/1 with non-consecutive elements are grouped sorted" do
+      assert Consecutix.consecutive_lists([0, 1, 2, 5, 6, 1]) == [[0, 1, 1, 2], [5, 6]]
+    end
+
     test "consecutive_lists/1 with four non-consecutive elements returns all elements in different groups" do
       assert Consecutix.consecutive_lists([0, 2, 4, 6]) == [[0], [2], [4], [6]]
     end
